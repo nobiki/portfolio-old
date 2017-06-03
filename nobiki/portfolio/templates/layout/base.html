@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+    <head>
+        <title>{% block title %} | Naoaki Obiki's Portfolio {% endblock %}</title>
+        {% block meta %}
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {% endblock %}
+        {% block css %}
+        <!--[if lte IE 8]><script src="/static/portfolio/assets/js/ie/html5shiv.js"></script><![endif]-->
+        <link rel="stylesheet" href="/static/portfolio/assets/css/animate.min.css">
+        <link rel="stylesheet" href="/static/portfolio/assets/css/timelify.min.css">
+        <link rel="stylesheet" href="/static/portfolio/assets/css/big-picture.min.css" />
+        <link rel="stylesheet" href="/static/portfolio/assets/css/swiper.min.css" />
+        <!--[if lte IE 8]><link rel="stylesheet" href="/static/portfolio/assets/css/ie8.css" /><![endif]-->
+        <!--[if lte IE 9]><link rel="stylesheet" href="/static/portfolio/assets/css/ie9.css" /><![endif]-->
+        {% endblock %}
+    </head>
+    <body>
+        <!-- Header -->
+        <header id="header">
+        {% block header %}
+        <h1><a href="/">{{name}}</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="#intro">Intro</a></li>
+                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="#experience">Work Experience</a></li>
+                    <li><a href="#product">Product</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        {% endblock %}
+        </header>
+
+        {% block content %}{% endblock %}
+
+        <!-- Footer -->
+        <footer id="footer">
+        {% block footer %}
+            <!-- Icons -->
+            <ul class="actions">
+                <li><a href="https://twitter.com/_nobiki" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+            </ul>
+            <!-- Menu -->
+            <ul class="menu">
+				<li>&copy; {{title}}</li>
+            </ul>
+        {% endblock %}
+        </footer>
+        {% block js %}
+        <script src="/static/portfolio/assets/js/jquery.min.js"></script>
+        <script src="/static/portfolio/assets/js/jquery.poptrox.min.js"></script>
+        <script src="/static/portfolio/assets/js/jquery.scrolly.min.js"></script>
+        <script src="/static/portfolio/assets/js/jquery.scrollex.min.js"></script>
+        <script src="/static/portfolio/assets/js/skel.min.js"></script>
+        <script src="/static/portfolio/assets/js/util.js"></script>
+        <!--[if lte IE 8]><script src="/static/portfolio/assets/js/ie/respond.min.js"></script><![endif]-->
+        <script src="/static/portfolio/assets/js/jquery.timelify.min.js"></script>
+        <script src="/static/portfolio/assets/js/jquery.ripples-min.js"></script>
+        <script src="/static/portfolio/assets/js/big-picture.min.js"></script>
+        <script src="/static/portfolio/assets/js/morphext.min.js"></script>
+        <script src="/static/portfolio/assets/js/swiper.min.js"></script>
+        <script src="/static/portfolio/assets/js/common.js"></script>
+        {% endblock %}
+    </body>
+</html>
