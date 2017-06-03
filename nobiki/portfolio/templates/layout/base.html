@@ -40,11 +40,15 @@
         {% block footer %}
             <!-- Icons -->
             <ul class="actions">
-                <li><a href="https://twitter.com/_nobiki" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+				<p style=" font-size: 12px; color: white; height: 29px; margin-top: -22px;">This site on powered by</p>
+				<li>
+					<img src="/static/portfolio/img/logo/django.svg" class="product-logo" style="vertical-align:middle">
+					<img src="/static/portfolio/img/logo/jenkins.svg" class="product-logo" style="vertical-align:middle">
+				</li>
             </ul>
             <!-- Menu -->
             <ul class="menu">
-				<li>&copy; {{title}}</li>
+				<li style="color: white;">&copy; {{title}}</li>
             </ul>
         {% endblock %}
         </footer>
