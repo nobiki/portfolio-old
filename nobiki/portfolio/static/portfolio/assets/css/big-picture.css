@@ -1954,22 +1954,7 @@ body.is-touch .main {
     }
 }
 
-/* Intro */
-#intro {
-    /* background:  url("/static/portfolio/img/bg5.jpg"); */
-    /* background-size: cover; */
-    /* background-attachment: fixed, fixed; */
-    /* background-position: top left, bottom center; */
-    /* background-repeat: repeat, no-repeat; */
-    animation: huerotator 120s infinite alternate;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #b6e2fd), color-stop(0.20, #91bae4), color-stop(0.50, #8fbff0), color-stop(0.51, #6ba8e4), color-stop(0.75, #87c2fb), color-stop(1.00, #bcf4fd));
-    background: -webkit-linear-gradient(top, #b6e2fd 0%, #91bae4 20%, #8fbff0 50%, #6ba8e4 51%, #87c2fb 75%, #bcf4fd 100%);
-    background: -moz-linear-gradient(top, #b6e2fd 0%, #91bae4 20%, #8fbff0 50%, #6ba8e4 51%, #87c2fb 75%, #bcf4fd 100%);
-    background: -o-linear-gradient(top, #b6e2fd 0%, #91bae4 20%, #8fbff0 50%, #6ba8e4 51%, #87c2fb 75%, #bcf4fd 100%);
-    background: -ms-linear-gradient(top, #b6e2fd 0%, #91bae4 20%, #8fbff0 50%, #6ba8e4 51%, #87c2fb 75%, #bcf4fd 100%);
-    background: linear-gradient(to bottom, #b6e2fd 0%, #91bae4 20%, #8fbff0 50%, #6ba8e4 51%, #87c2fb 75%, #bcf4fd 100%);
-}
-
+/* Animation */
 @keyframes huerotator {
     0% {
         -webkit-filter: hue-rotate(0deg);
@@ -1982,12 +1967,38 @@ body.is-touch .main {
     }
 }
 
+/* Intro */
+#intro {
+    animation: huerotator 120s infinite alternate;
+	background: #4568DC;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #B06AB3, #4568DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
 /* Profile */
 #profile {
     background: url("/static/portfolio/img/bg4.jpg");
     background-size: cover;
     background-attachment: fixed, fixed;
     background-position: top left, center center;
+}
+#profile-waka1 {
+	background: linear-gradient(-45deg, rgba(175,255,255, .4), rgba(0, 0, 0, .8)), url("/static/portfolio/img/bg6.jpg");
+    /* background-size: cover; */
+    /* background-attachment: fixed, fixed; */
+    /* background-position: top left, center center; */
+}
+#profile-waka2 {
+	background: linear-gradient(-45deg, rgba(255,215,255, .4), rgba(0, 0, 0, .8)), url("/static/portfolio/img/bg7.jpg");
+    background-size: cover;
+    background-attachment: fixed, fixed;
+    background-position: top left, center center;
+}
+
+@media only screen and (min-width: 736px) {
+	#profile-waka2 embed {
+		float: left;
+	}
 }
 
 /* Experience */
@@ -2135,15 +2146,8 @@ body.is-touch .main {
     width: 26.66%;
 }
 
-/*  GO FULL WIDTH BELOW 480 PIXELS */
-@media only screen and (max-width: 480px) {
-    .production .col {
-        margin: 1% 0 1% 0%;
-    }
-
-    .production .span_3_of_3, .production .span_2_of_3, .production .span_1_of_3 {
-        width: 100%;
-    }
+.product-logo {
+    height: 25px;
 }
 
 .prod-content {
@@ -2166,3 +2170,14 @@ body.is-touch .main {
     text-align: center;
 }
 
+
+/*  GO FULL WIDTH BELOW 480 PIXELS */
+@media only screen and (max-width: 480px) {
+    .production .col {
+        margin: 1% 0 1% 0%;
+    }
+
+    .production .span_3_of_3, .production .span_2_of_3, .production .span_1_of_3 {
+        width: 100%;
+    }
+}

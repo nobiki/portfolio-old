@@ -1,0 +1,22 @@
+<!-- Contact -->
+<section id="contact" class="main style3 secondary">
+	<div class="content">
+		<header>
+			<h2>Contact</h2>
+			{# <p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.</p> #}
+		</header>
+		<div class="box">
+            {{ form.errors }}
+            <form method="POST">
+                {% csrf_token %}
+                <div class="field half first">{{contact_form.name}}</div>
+                <div class="field half">{{contact_form.email}}</div>
+                <div class="field">{{contact_form.message}}</div>
+                <ul class="actions">
+                    <li><input type="submit" class="pyonpyon" value="Send Message" /></li>
+                </ul>
+            </form>
+		</div>
+	</div>
+</section>
+
