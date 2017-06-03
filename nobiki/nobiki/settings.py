@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+EMAIL_HOST = os.environ.get('PORTFOLIO_ENV_EMAIL_HOST')
+EMAIL_PORT = os.environ.get('PORTFOLIO_ENV_EMAIL_PORT')
+EMAIL_HOST_USER = os.environ.get('PORTFOLIO_ENV_EMAIL_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('PORTFOLIO_ENV_EMAIL_PASS')
+EMAIL_USE_TLS = True
 
 # Application definition
 
@@ -85,10 +90,10 @@ WSGI_APPLICATION = 'nobiki.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'HOST': os.environ.get('ENV_DB_HOST'),
-        'NAME': os.environ.get('ENV_DB_NAME'),
-        'USER': os.environ.get('ENV_DB_USER'),
-        'PASSWORD': os.environ.get('ENV_DB_PASS'),
+        'HOST': os.environ.get('PORTFOLIO_ENV_DB_HOST'),
+        'NAME': os.environ.get('PORTFOLIO_ENV_DB_NAME'),
+        'USER': os.environ.get('PORTFOLIO_ENV_DB_USER'),
+        'PASSWORD': os.environ.get('PORTFOLIO_ENV_DB_PASS'),
     }
 }
 
