@@ -21,6 +21,7 @@ class IndexView(FormView):
     def form_valid(self, form, **kwargs):
         context = self.get_context_data(**kwargs)
         context['contact_form'] = form
-        # context[show_results] = True
+
+        form.send_email()
+
         return super(IndexView,self).form_valid(form)
-        # return self.render_to_response(context)
