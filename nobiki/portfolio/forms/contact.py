@@ -6,20 +6,23 @@ class ContactForm(forms.Form):
     name = forms.CharField(
             required=True,
             widget=forms.TextInput(attrs={
-                'placeholder': 'Name'
+                'placeholder': 'Name',
+                'data-contact': 'name'
                 })
             )
     email = forms.CharField(
             required=True,
             widget=forms.EmailInput(attrs={
-                'placeholder': 'Email'
+                'placeholder': 'Email',
+                'data-contact': 'email'
                 })
             )
     message = forms.CharField(
             required=True,
             widget=forms.Textarea(attrs={
                 'rows': '6',
-                'placeholder': 'Message'
+                'placeholder': 'Message',
+                'data-contact': 'message'
                 })
             )
 
