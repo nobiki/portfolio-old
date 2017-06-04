@@ -43,6 +43,6 @@ class IndexView(AjaxableResponseMixin, FormView):
     # ContactForm
     def form_valid(self, form, **kwargs):
 
-        # form.send_email()
+        form.send_email()
 
         return super(IndexView,self).form_valid(form)
