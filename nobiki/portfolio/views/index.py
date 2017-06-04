@@ -31,7 +31,7 @@ class IndexView(AjaxableResponseMixin, FormView):
 
     template_name = "top/index.html"
     form_class = ContactForm
-    success_url = '/memo/'
+    success_url = '/'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
