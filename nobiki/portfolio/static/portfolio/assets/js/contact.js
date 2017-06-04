@@ -12,16 +12,16 @@ $("form[data-contact='form']").submit(function(e){
         dataType: 'json',
         contentType: false,
         processData: false,
-        beforeSend: function(){
-            console.log("beforeSend");
-        }
+        beforeSend: function(){}
     })
     .always(function(data,status) {
-        console.log(status);
-        console.log(data);
+        if("success" == status)
+        {
+            $("#contact .box").css("-webkit-transform", "rotateX(180deg)");
+            $("#contact .box").css("transform", "rotateX(180deg)");
+        }
     })
     .fail(function(data) {
-        console.log(data);
     });
 
     return false;
