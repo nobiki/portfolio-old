@@ -4,8 +4,30 @@ from portfolio.forms import ContactForm
 
 from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
+from django.http import JsonResponse
 
-class IndexView(FormView):
+class AjaxableResponseMixin(object):
+
+    def form_invalid(self, form):
+        response = super(AjaxableResponseMixin, self).form_invalid(form)
+        if self.request.is_ajax():
+            return JsonResponse(form.errors, status=400)
+        else:
+            return response
+
+    # ContactForm (Ajax Handling)
+    def form_valid(self, form):
+        response = super(AjaxableResponseMixin, self).form_valid(form)
+
+        if self.request.is_ajax():
+            data = {
+                    "name": "koko",
+                    }
+            return JsonResponse(data)
+        else:
+            return response
+
+class IndexView(AjaxableResponseMixin, FormView):
 
     template_name = "top/index.html"
     form_class = ContactForm
@@ -18,9 +40,8 @@ class IndexView(FormView):
         context["contact_form"] = ContactForm
         return context
 
+    # ContactForm
     def form_valid(self, form, **kwargs):
-        context = self.get_context_data(**kwargs)
-        context['contact_form'] = form
 
         form.send_email()
 

@@ -7,7 +7,7 @@
 		</header>
 		<div class="box">
             {{ form.errors }}
-            <form method="POST">
+            <form data-contact="form" method="POST">
                 {% csrf_token %}
                 <div class="field half first">{{contact_form.name}}</div>
                 <div class="field half">{{contact_form.email}}</div>

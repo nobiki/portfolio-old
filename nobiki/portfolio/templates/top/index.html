@@ -15,3 +15,9 @@
 {% include "./contact.html" %}
 
 {% endblock %}
+
+{% block js %}
+    {{ block.super }}
+    <script src="/static/portfolio/assets/js/contact.js"></script>
+{% endblock %}
+
