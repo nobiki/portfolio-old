@@ -27,6 +27,4 @@ $(document).ready(function(){
         perturbance: 0.05,
     });
 
-    $.snackbar({ content: "^o^" });
-
 })
