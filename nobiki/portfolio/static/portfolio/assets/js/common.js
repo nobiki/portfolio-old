@@ -26,4 +26,7 @@ $(document).ready(function(){
         dropRadius: 20,
         perturbance: 0.05,
     });
+
+    $.snackbar({ content: "^o^" });
+
 })
