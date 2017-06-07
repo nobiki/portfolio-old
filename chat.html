@@ -1,0 +1,46 @@
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>WebSocket Sample</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+        var s = new WebSocket("ws://ws.9zilla.local/");
+        s.onopen = function(){
+            console.log("[onopen]");
+            s.send("connected!!!");
+        };
+        s.onmessage = function(e) {
+            console.log("[onmessage]");
+            console.log(e.data);
+            $("*[data-name='chat']").append(e.data+"<br>");
+        };
+        s.onerror = function(e) {
+            console.log("[onerror]");
+            console.log(e);
+        };
+        s.onclose = function(e) {
+            console.log("[onclose]");
+            console.log("connection closed..");
+
+            console.log("Close Code = " + e.code);
+            console.log("Close Reason = " + e.reason);
+        };
+
+        $("input[type='button']").click(function(){
+            var msg = $("input[name='message']").val();
+            s.send(msg);
+            $("input[name='message']").val("");
+        });
+    });
+    </script>
+</head>
+<body>
+    <input type="text" name="message" size="100" />
+    <input type="button" data-name="message" value="send">
+    <hr />
+    <div data-name="chat"></div>
+</body>
+</html>
