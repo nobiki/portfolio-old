@@ -21,10 +21,10 @@ $(document).ready(function(){
         speed: 600,
         loop: true,
     });
-    $('#intro').ripples({
-        resolution: 512,
-        dropRadius: 20,
-        perturbance: 0.05,
-    });
-
+    // $('#intro').ripples({
+    //     resolution: 512,
+    //     dropRadius: 20,
+    //     perturbance: 0.05,
+    //     interactive: true,
+    // });
 })

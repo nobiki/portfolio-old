@@ -8,6 +8,7 @@ $(document).ready(function(){
         console.log("[onmessage]");
         console.log(e.data);
         $.snackbar({content: e.data});
+
     };
     s.onerror = function(e) {
         console.log("[onerror]");
@@ -20,4 +21,12 @@ $(document).ready(function(){
         console.log("Close Code = " + e.code);
         console.log("Close Reason = " + e.reason);
     };
+
+    $("#intro").on("click",function(e){
+        var ox=e.offsetX;
+        var oy=e.offsetY;
+        console.log("[x]"+ox+" [y]"+oy);
+        s.send("[x]"+ox+" [y]"+oy);
+    });
+
 });
