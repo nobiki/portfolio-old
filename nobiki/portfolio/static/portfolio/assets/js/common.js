@@ -27,4 +27,43 @@ $(document).ready(function(){
     //     perturbance: 0.05,
     //     interactive: true,
     // });
-})
+});
+
+// $(function() {
+//     var $clickable = $('#intro');
+//
+//     #<{(| mousedownだと直ぐに発動し、clickだとマウスボタンを離した時に発動する |)}>#
+//     $clickable.on('mousedown', function(e) {
+//         var _self   = this;
+//         var x       = e.offsetX;
+//         var y       = e.offsetY;
+//
+//         var $effect = $(_self).find('.ripple__effect');
+//         var w       = $effect.width();
+//         var h       = $effect.height();
+//
+//         console.log(x);
+//         console.log(y);
+//         console.log(w);
+//         console.log(h);
+//         console.log(Math.round(x - w / 2));
+//         console.log(Math.round(y - h / 2));
+//         #<{(| クリックした座標を中心とする |)}>#
+//         $effect.css({
+//             // left: Math.round(x - w / 2),
+//             // top: Math.round(y - h / 2)
+//             left: x,
+//             top: y
+//         });
+//
+//         #<{(| jsではclassの付け替えをするだけ |)}>#
+//         if (!$effect.hasClass('is-show')) {
+//             $effect.addClass('is-show');
+//             setTimeout(function() {
+//                 $effect.removeClass('is-show');
+//             }, 750);
+//         }
+//         return false;
+//     });
+//
+// });
