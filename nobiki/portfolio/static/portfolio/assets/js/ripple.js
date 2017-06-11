@@ -2,7 +2,8 @@ var ripple_color = ["orange","blue","black"]
 var ripple_no = Math.round( Math.random()*2);
 
 $(document).ready(function(){
-    var s = new WebSocket("ws://ws.9zilla.local/");
+    var url = $("#intro").data("url");
+    var s = new WebSocket("ws://"+url+"/");
 
     s.onopen = function(){
         /* console.log("[onopen]"); */

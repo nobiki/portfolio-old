@@ -37,6 +37,7 @@ class IndexView(AjaxableResponseMixin, FormView):
         context = super().get_context_data(**kwargs)
         context["name"] = PortfolioConfig.name
         context["title"] = PortfolioConfig.title
+        context["ws"] = PortfolioConfig.ws
         context["contact_form"] = ContactForm
         return context
 

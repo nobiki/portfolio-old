@@ -3,7 +3,12 @@ from django.apps import AppConfig
 
 
 class PortfolioConfig(AppConfig):
-    env = os.environ.get('DOCKER_ENV')
-
     title = "Naoaki Obiki"
     name = "Portfolio"
+
+    env = os.environ.get('DOCKER_ENV')
+
+    if env == "development":
+        ws = "ws.9zilla.local"
+    elif env == "production":
+        ws = "ws.oji.0j0.jp"
