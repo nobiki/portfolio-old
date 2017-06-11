@@ -21,7 +21,7 @@
 .ripple__effect.is-black  { background: #999;}
 
 .ripple__effect.is-show {
-    animation: ripple 0.50s ease-out;
+    animation: ripple 0.75s ease-out;
 }
 
 @keyframes ripple {
