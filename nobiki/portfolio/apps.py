@@ -11,4 +11,4 @@ class PortfolioConfig(AppConfig):
     if env == "development":
         ws = "ws.9zilla.local"
     elif env == "production":
-        ws = "ws.oji.0j0.jp"
+        ws = "ws.portfolio.oji.0j0.jp"
