@@ -21,7 +21,7 @@ class AjaxableResponseMixin(object):
 
         if self.request.is_ajax():
             data = {
-                    "name": "koko",
+                    "name": "hoge",
                     }
             return JsonResponse(data)
         else:
