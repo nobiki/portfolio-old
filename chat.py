@@ -2,6 +2,7 @@ import uwsgi
 import redis
 import time
 import sys
+import json
 
 def application(env, start_response):
     # complete the handshake
@@ -25,14 +26,13 @@ def application(env, start_response):
                     r.publish('foobar', msg)
             elif fd == redis_fd:
                 msg = channel.parse_response()
-                print(msg)
-                print(msg[2])
                 # only interested in user messages
                 t = 'message'
                 if sys.version_info[0] > 2:
                     t = b'message'
                 if msg[0] == t:
-                    uwsgi.websocket_send("%s" % msg[2])
+                    json = msg[2].decode('utf-8')
+                    uwsgi.websocket_send("%s" % json)
                     # uwsgi.websocket_send("[%s] %s" % (time.time(), msg))
         else:
             # on timeout call websocket_recv_nb again to manage ping/pong

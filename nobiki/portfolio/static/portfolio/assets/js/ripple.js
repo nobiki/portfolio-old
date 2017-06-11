@@ -6,8 +6,8 @@ $(document).ready(function(){
     };
     s.onmessage = function(e) {
         /* console.log("[onmessage]"); */
-        /* console.log(e.data); */
-        ripple(500,500);
+        var pos = JSON.parse(e.data);
+        ripple(pos.x,pos.y);
     };
     s.onerror = function(e) {
         /* console.log("[onerror]"); */
@@ -21,10 +21,11 @@ $(document).ready(function(){
     };
 
     $("#intro").on("mouseup",function(e){
-        var ox=e.offsetX;
-        var oy=e.offsetY;
-        console.log("[x]"+ox+" [y]"+oy);
-        s.send("[x]"+ox+" [y]"+oy);
+        var ox = e.pageX - $("#intro").offset()["left"];
+        var oy = e.pageY - $("#intro").offset()["top"];
+
+        var pos = JSON.stringify({ x: ox, y: oy});
+        s.send(pos);
     });
 
     var $clickable = $('.ripple');
