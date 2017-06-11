@@ -1797,7 +1797,7 @@ body.is-touch .main {
 
 @media screen and (max-width: 1920px) {
     .main.style2 .content {
-        width: 60%;
+        width: 50%;
     }
 }
 
@@ -1987,7 +1987,8 @@ body.is-touch .main {
     background-position: top left, center center;
 }
 #profile-waka1 {
-	background: linear-gradient(-45deg, rgba(175,175,255, .4), rgba(0, 0, 0, .8)), url("/static/portfolio/img/bg6.jpg");
+	background: url("/static/portfolio/img/bg1.jpg");
+	/* background: linear-gradient(-45deg, rgba(175,175,255, .4), rgba(0, 0, 0, .8)), url("/static/portfolio/img/bg1.jpg"); */
 	/* background: linear-gradient(-45deg, rgba(175,255,255, .4), rgba(0, 0, 0, .8)), url("/static/portfolio/img/bg6.jpg"); */
     /* background-size: cover; */
     /* background-attachment: fixed, fixed; */
@@ -2000,17 +2001,17 @@ body.is-touch .main {
     background-position: top left, center center;
 }
 
-@media only screen and (max-width: 736px) {
+/* @media only screen and (max-width: 736px) { */
 	#profile-waka2 embed {
 		width: 100%;
 	}
-}
-@media only screen and (min-width: 736px) {
-	#profile-waka2 embed {
-		float: left;
-		width: 50%;
-	}
-}
+/* } */
+/* @media only screen and (min-width: 736px) { */
+/* 	#profile-waka2 embed { */
+/* 		float: left; */
+/* 		width: 50%; */
+/* 	} */
+/* } */
 
 /* Experience */
 #experience {
