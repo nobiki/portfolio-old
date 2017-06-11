@@ -10,7 +10,7 @@ def application(env, start_response):
 
     r = redis.StrictRedis(host='redis-gandamu', port=6379, db=0)
     channel = r.pubsub()
-    channel.subscribe('foobar')
+    channel.subscribe('portfolio')
     websocket_fd = uwsgi.connection_fd()
     redis_fd = channel.connection._sock.fileno()
 
@@ -23,7 +23,7 @@ def application(env, start_response):
             if fd == websocket_fd:
                 msg = uwsgi.websocket_recv_nb()
                 if msg:
-                    r.publish('foobar', msg)
+                    r.publish('portfolio', msg)
             elif fd == redis_fd:
                 msg = channel.parse_response()
                 # only interested in user messages
@@ -38,4 +38,4 @@ def application(env, start_response):
             # on timeout call websocket_recv_nb again to manage ping/pong
             msg = uwsgi.websocket_recv_nb()
             if msg:
-                r.publish('foobar', msg)
+                r.publish('portfolio', msg)
