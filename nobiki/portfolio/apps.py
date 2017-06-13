@@ -9,6 +9,6 @@ class PortfolioConfig(AppConfig):
     env = os.environ.get('DOCKER_ENV')
 
     if env == "development":
-        ws = "ws.9zilla.local"
+        ws = "ws.portfolio.9zilla.local"
     elif env == "production":
         ws = "ws.portfolio.oji.0j0.jp"
