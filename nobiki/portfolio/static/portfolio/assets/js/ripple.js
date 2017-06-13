@@ -3,7 +3,7 @@ var ripple_no = Math.round( Math.random()*2);
 
 $(document).ready(function(){
     var url = $("#intro").data("url");
-    var s = new WebSocket("ws://"+url+"/");
+    var s = new WebSocket("wss://"+url+"/");
 
     s.onopen = function(){
         /* console.log("[onopen]"); */
