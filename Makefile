@@ -11,8 +11,6 @@ reload:
 
 static:
 	python nobiki/manage.py collectstatic --noinput
-	java -jar node_modules/google-closure-compiler/compiler.jar --help | head
-	java -jar node_modules/google-closure-stylesheets/stylesheets.jar --help | head
 
 clean:
 	rm -rf nobiki/static/
