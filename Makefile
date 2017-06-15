@@ -12,8 +12,6 @@ clean:
 
 static:
 	python nobiki/manage.py collectstatic --noinput
-	java -jar ./node_modules/google-closure-compiler/compiler.jar --help
-	java -jar ./node_modules/google-closure-stylesheets/stylesheets.jar --help
 
 reload:
 	touch .uwsgi_reload
