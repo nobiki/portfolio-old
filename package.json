@@ -2,9 +2,6 @@
 	"name": "portfolio",
 	"version": "1.0.0",
 	"description": "",
-	"devDependencies": {
-		"google-closure-compiler": "^20170521.0.0",
-		"google-closure-stylesheets": "^20150509.0.0"
-	},
+	"devDependencies": {},
 	"dependencies": {}
 }
