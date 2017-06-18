@@ -1,4 +1,6 @@
 install:
+	pyenv install
+	ndenv install
 	pip install -r requirements.txt
 	npm install
 	python manage.py migrate
