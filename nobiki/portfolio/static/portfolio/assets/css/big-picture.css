@@ -1981,21 +1981,21 @@ body.is-touch .main {
 
 /* Profile */
 #profile {
-    background: url("/static/portfolio/img/bg4.jpg");
+    background: url("/static/portfolio/assets/img/bg4.jpg");
     background-size: cover;
     background-attachment: fixed, fixed;
     background-position: top left, center center;
 }
 #profile-waka1 {
-	background: url("/static/portfolio/img/bg1.jpg");
-	/* background: linear-gradient(-45deg, rgba(175,175,255, .4), rgba(0, 0, 0, .8)), url("/static/portfolio/img/bg1.jpg"); */
-	/* background: linear-gradient(-45deg, rgba(175,255,255, .4), rgba(0, 0, 0, .8)), url("/static/portfolio/img/bg6.jpg"); */
+	background: url("/static/portfolio/assets/img/bg1.jpg");
+	/* background: linear-gradient(-45deg, rgba(175,175,255, .4), rgba(0, 0, 0, .8)), url("/static/portfolio/assets/img/bg1.jpg"); */
+	/* background: linear-gradient(-45deg, rgba(175,255,255, .4), rgba(0, 0, 0, .8)), url("/static/portfolio/assets/img/bg6.jpg"); */
     /* background-size: cover; */
     /* background-attachment: fixed, fixed; */
     /* background-position: top left, center center; */
 }
 #profile-waka2 {
-	background: linear-gradient(-45deg, rgba(255,215,255, .4), rgba(0, 0, 0, .8)), url("/static/portfolio/img/bg7.jpg");
+	background: linear-gradient(-45deg, rgba(255,215,255, .4), rgba(0, 0, 0, .8)), url("/static/portfolio/assets/img/bg7.jpg");
     background-size: cover;
     background-attachment: fixed, fixed;
     background-position: top left, center center;
@@ -2026,7 +2026,7 @@ body.is-touch .main {
 
 /* Work */
 #product {
-    background: url("/static/portfolio/img/bg1.jpg");
+    background: url("/static/portfolio/assets/img/bg1.jpg");
     background-size: cover;
     background-attachment: fixed, fixed;
     background-position: top left, center center;
@@ -2034,7 +2034,7 @@ body.is-touch .main {
 
 /* Contact */
 #contact {
-    /* background:  url("/static/portfolio/img/bg3.jpg"); */
+    /* background:  url("/static/portfolio/assets/img/bg3.jpg"); */
     background: #A9E2F3;
     background-size: cover;
     background-attachment: fixed, fixed;

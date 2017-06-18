@@ -8,13 +8,13 @@
         {% endblock %}
         {% block css %}
         <!--[if lte IE 8]><script src="/static/portfolio/assets/js/ie/html5shiv.js"></script><![endif]-->
-        <link rel="stylesheet" href="/static/portfolio/assets/css/animate.min.css">
-        <link rel="stylesheet" href="/static/portfolio/assets/css/snackbar.min.css">
-        <link rel="stylesheet" href="/static/portfolio/assets/css/snackbar.theme.material.min.css">
-        <link rel="stylesheet" href="/static/portfolio/assets/css/timelify.min.css">
-        <link rel="stylesheet" href="/static/portfolio/assets/css/big-picture.min.css" />
-        <link rel="stylesheet" href="/static/portfolio/assets/css/swiper.min.css" />
-        <link rel="stylesheet" href="/static/portfolio/assets/css/ripple.min.css" />
+        <link rel="stylesheet" href="/static/portfolio/assets/css/animate.css">
+        <link rel="stylesheet" href="/static/portfolio/assets/css/snackbar.css">
+        <link rel="stylesheet" href="/static/portfolio/assets/css/snackbar.theme.material.css">
+        <link rel="stylesheet" href="/static/portfolio/assets/css/timelify.css">
+        <link rel="stylesheet" href="/static/portfolio/assets/css/big-picture.css" />
+        <link rel="stylesheet" href="/static/portfolio/assets/css/swiper.css" />
+        <link rel="stylesheet" href="/static/portfolio/assets/css/ripple.css" />
         <!--[if lte IE 8]><link rel="stylesheet" href="/static/portfolio/assets/css/ie8.css" /><![endif]-->
         <!--[if lte IE 9]><link rel="stylesheet" href="/static/portfolio/assets/css/ie9.css" /><![endif]-->
         {% endblock %}
@@ -45,9 +45,9 @@
             <ul class="actions">
 				<p style=" font-size: 12px; color: white; height: 29px; margin-top: -22px;">This site on powered by</p>
 				<li>
-					<img src="/static/portfolio/img/logo/django.svg" class="product-logo" style="vertical-align:middle" alt="This site is Django Web Application.">
-					<img src="/static/portfolio/img/logo/jenkins.svg" class="product-logo" style="vertical-align:middle" alt="Deployment by Jenkins.">
-					<img src="/static/portfolio/img/logo/docker.svg" class="product-logo" style="vertical-align:middle" alt="Infrastructure by Docker.">
+					<img src="/static/portfolio/assets/img/logo/django.svg" class="product-logo" style="vertical-align:middle" alt="This site is Django Web Application.">
+					<img src="/static/portfolio/assets/img/logo/jenkins.svg" class="product-logo" style="vertical-align:middle" alt="Deployment by Jenkins.">
+					<img src="/static/portfolio/assets/img/logo/docker.svg" class="product-logo" style="vertical-align:middle" alt="Infrastructure by Docker.">
 				</li>
             </ul>
             <!-- Menu -->
@@ -57,20 +57,8 @@
         {% endblock %}
         </footer>
         {% block js %}
-        <!--[if lte IE 8]><script src="/static/portfolio/assets/js/ie/respond.min.js"></script><![endif]-->
-        <script src="/static/portfolio/assets/js/jquery.min.js"></script>
-        <script src="/static/portfolio/assets/js/jquery.poptrox.min.js"></script>
-        <script src="/static/portfolio/assets/js/jquery.scrolly.min.js"></script>
-        <script src="/static/portfolio/assets/js/jquery.scrollex.min.js"></script>
-        <script src="/static/portfolio/assets/js/snackbar.min.js"></script>
-        <script src="/static/portfolio/assets/js/jquery.timelify.min.js"></script>
-        <script src="/static/portfolio/assets/js/skel.min.js"></script>
-        <script src="/static/portfolio/assets/js/util.js"></script>
-        <script src="/static/portfolio/assets/js/big-picture.min.js"></script>
-        <script src="/static/portfolio/assets/js/morphext.min.js"></script>
-        <script src="/static/portfolio/assets/js/swiper.min.js"></script>
-        <script src="/static/portfolio/assets/js/common.js"></script>
-        <script src="/static/portfolio/assets/js/ripple.js"></script>
+        <script src="/static/common/bundle.js"></script>
+        <script src="/static/portfolio/app/contact/bundle.js"></script>
         {% endblock %}
 		{% block ana %}
 		<script>
