@@ -12,7 +12,7 @@ clean:
 
 static:
 	python nobiki/manage.py collectstatic --noinput
-	webpack -p
+	./node_modules/.bin/webpack -p
 
 reload:
 	touch .uwsgi_reload
