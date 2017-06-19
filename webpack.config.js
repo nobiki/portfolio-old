@@ -5,7 +5,7 @@ module.exports = {
     entry: {
         "common": [
             path.join(__dirname, "./webpack_assets/common/js/snackbar.min.js"),
-            path.join(__dirname, "./webpack_assets/common/js/swiper.min.js")
+            path.join(__dirname, "./webpack_assets/common/js/swiper.min.js"),
             path.join(__dirname, "./webpack_assets/common/js/jquery.poptrox.min.js"),
             path.join(__dirname, "./webpack_assets/common/js/jquery.scrollex.min.js"),
             path.join(__dirname, "./webpack_assets/common/js/jquery.scrolly.min.js"),
@@ -19,7 +19,7 @@ module.exports = {
         ],
         "portfolio/app/contact": [
             path.join(__dirname, "./webpack_assets/portfolio/js/ripple.js"),
-            path.join(__dirname, "./webpack_assets/portfolio/js/contact.js")
+            path.join(__dirname, "./webpack_assets/portfolio/js/contact.js"),
         ]
     },
     output: {
