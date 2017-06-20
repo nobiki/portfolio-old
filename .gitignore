@@ -15,4 +15,6 @@ nobiki/static/
 ### Node ###
 node_modules/
 
+1dc35d25e61d819a9c357074014867ab.ttf
+d7c639084f684d66a1bc66855d193ed8.svg
 # End of https://www.gitignore.io/api/django
