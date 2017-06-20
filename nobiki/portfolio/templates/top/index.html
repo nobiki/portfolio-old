@@ -2,6 +2,11 @@
 
 {% block title %}Top {{ block.super }}{% endblock %}
 
+{% block css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="/static/portfolio/contact/bundle.css" />
+{% endblock %}
+
 {% block content %}
 
 {% include "./intro.html" %}
@@ -18,6 +23,6 @@
 
 {% block js %}
     {{ block.super }}
-    <link rel="stylesheet" href="/static/portfolio/assets/css/contact.css" />
+    <script src="/static/portfolio/contact/bundle.js"></script>
 {% endblock %}
 
