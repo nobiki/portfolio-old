@@ -20,3 +20,8 @@ reload:
 	touch .uwsgi_reload
 	touch .websocket_reload
 
+jenkins:
+	make update
+	make clean
+	make static
+	make reload
