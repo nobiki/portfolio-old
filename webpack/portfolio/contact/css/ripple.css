@@ -21,15 +21,18 @@
 .ripple__effect.is-black  { background: #999;}
 
 .ripple__effect.is-show {
-    animation: ripple 0.75s ease-out;
+    animation: ripple 10.0s ease-out;
 }
 
 @keyframes ripple {
-    from {
+    0% {
         opacity: 1;
     }
-    to {
+    10% {
         transform: scale(2);
+        opacity: 0.4;
+    }
+    100% {
         opacity: 0;
     }
 }

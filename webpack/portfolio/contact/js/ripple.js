@@ -61,7 +61,7 @@ function ripple(x,y,color) {
 
     setTimeout(function() {
         $("#ripple-"+uniqueId).remove();
-    }, 550);
+    }, 10000);
 
     return false;
 }
