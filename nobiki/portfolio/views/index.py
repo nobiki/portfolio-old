@@ -38,6 +38,7 @@ class IndexView(AjaxableResponseMixin, FormView):
         context["name"] = PortfolioConfig.name
         context["title"] = PortfolioConfig.title
         context["ws"] = PortfolioConfig.ws
+        context["recaptcha"] = PortfolioConfig.recaptcha
         context["contact_form"] = ContactForm
         return context
 

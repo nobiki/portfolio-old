@@ -6,6 +6,11 @@ class PortfolioConfig(AppConfig):
     title = "Naoaki Obiki"
     name = "Portfolio"
 
+    recaptcha = {
+        "site_key": "6LecuScUAAAAALN69kO8LhmY81qvHbCKkWFqAgVw",
+        "secret_key": os.environ.get("PORTFOLIO_ENV_RECAPTCHA_SECRET_KEY"),
+    }
+
     env = os.environ.get('DOCKER_ENV')
 
     if env == "development":
