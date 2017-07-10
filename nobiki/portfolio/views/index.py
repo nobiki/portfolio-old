@@ -44,7 +44,12 @@ class IndexView(AjaxableResponseMixin, FormView):
 
     # ContactForm
     def form_valid(self, form, **kwargs):
+        print(form.cleaned_data)
 
+        # postdata = {}
+        # postdata["name"] = form.cleaned_data["name"]
+        # postdata["email"] = form.cleaned_data["email"]
         form.send_email()
 
         return super(IndexView,self).form_valid(form)
+
