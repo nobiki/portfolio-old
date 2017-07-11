@@ -25,7 +25,7 @@ class ContactForm(forms.Form):
                 'data-contact': 'message'
                 })
             )
-    g_recaptcha_response = forms.CharField(required=True)
+    g_recaptcha_response = forms.CharField(required=False)
 
     def send_email(self):
         subject         = self.cleaned_data['name']

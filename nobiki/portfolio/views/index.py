@@ -23,18 +23,16 @@ class AjaxableResponseMixin(object):
         # print(form.cleaned_data)
         response = super(AjaxableResponseMixin, self).form_valid(form)
 
-        ### recaptcha code
-        # if True == self.recaptcha_valid(form.cleaned_data["g_recaptcha_response"]):
-        #     print("True")
-        #     form.send_email()
-        # else:
-        #     print("False")
-        form.send_email()
+        if True == self.recaptcha_valid(form.cleaned_data["g_recaptcha_response"]):
+            recaptcha = True
+            form.send_email()
+        else:
+            recaptcha = False
 
         if self.request.is_ajax():
             data = {
-                    "name": "hoge",
-                    }
+                "recaptcha": recaptcha,
+            }
             return JsonResponse(data)
         else:
             return response

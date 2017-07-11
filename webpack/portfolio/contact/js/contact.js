@@ -4,7 +4,12 @@ $("form[data-contact='form']").submit(function(e){
     var $form = $(this);
     var postData = new FormData($form.get(0));
 
-    postData.append("g_recaptcha_response", $("#g-recaptcha-response").val());
+    if("" != $("#g-recaptcha-response").val())
+    {
+        postData.append("g_recaptcha_response", $("#g-recaptcha-response").val());
+    }else{
+        postData.append("g_recaptcha_response", "");
+    }
 
     $.ajax({
         cache : false,
@@ -22,8 +27,15 @@ $("form[data-contact='form']").submit(function(e){
     .always(function(data,status) {
         if("success" == status)
         {
-            $("#contact .box").css("-webkit-transform", "rotateX(180deg)");
-            $("#contact .box").css("transform", "rotateX(180deg)");
+            if(data["recaptcha"] == true)
+            {
+                $("#contact .box").css("-webkit-transform", "rotateX(180deg)");
+                $("#contact .box").css("transform", "rotateX(180deg)");
+            }else{
+                $("#contact").find("input[type='submit']").removeAttr("disabled");
+                $("#contact").find("input[type='submit']").show();
+                $.snackbar({content:"画像認証を行ってください"});
+            }
         }else{
             $("#contact").find("input[type='submit']").removeAttr("disabled");
             $("#contact").find("input[type='submit']").show();
