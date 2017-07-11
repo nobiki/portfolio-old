@@ -1,4 +1,7 @@
 import os
+import json
+import urllib.request
+
 from portfolio.apps import PortfolioConfig
 from portfolio.forms import ContactForm
 
@@ -17,7 +20,16 @@ class AjaxableResponseMixin(object):
 
     # ContactForm (Ajax Handling)
     def form_valid(self, form):
+        # print(form.cleaned_data)
         response = super(AjaxableResponseMixin, self).form_valid(form)
+
+        ### recaptcha code
+        # if True == self.recaptcha_valid(form.cleaned_data["g_recaptcha_response"]):
+        #     print("True")
+        #     form.send_email()
+        # else:
+        #     print("False")
+        form.send_email()
 
         if self.request.is_ajax():
             data = {
@@ -26,6 +38,16 @@ class AjaxableResponseMixin(object):
             return JsonResponse(data)
         else:
             return response
+
+    def recaptcha_valid(self, g_recaptcha_response):
+
+        verify_url = PortfolioConfig.recaptcha["verify_url"]+"?secret="+PortfolioConfig.recaptcha["secret_key"]+"&response="+g_recaptcha_response
+
+        with urllib.request.urlopen(verify_url) as res:
+            res_json = res.read().decode("utf-8")
+            res_dict = json.loads(res_json)
+
+        return res_dict["success"]
 
 class IndexView(AjaxableResponseMixin, FormView):
 
@@ -44,12 +66,5 @@ class IndexView(AjaxableResponseMixin, FormView):
 
     # ContactForm
     def form_valid(self, form, **kwargs):
-        print(form.cleaned_data)
-
-        # postdata = {}
-        # postdata["name"] = form.cleaned_data["name"]
-        # postdata["email"] = form.cleaned_data["email"]
-        form.send_email()
-
         return super(IndexView,self).form_valid(form)
 

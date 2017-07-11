@@ -7,6 +7,7 @@ class PortfolioConfig(AppConfig):
     name = "Portfolio"
 
     recaptcha = {
+        "verify_url": "https://www.google.com/recaptcha/api/siteverify",
         "site_key": "6LecuScUAAAAALN69kO8LhmY81qvHbCKkWFqAgVw",
         "secret_key": os.environ.get("PORTFOLIO_ENV_RECAPTCHA_SECRET_KEY"),
     }

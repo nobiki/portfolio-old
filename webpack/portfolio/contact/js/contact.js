@@ -4,6 +4,8 @@ $("form[data-contact='form']").submit(function(e){
     var $form = $(this);
     var postData = new FormData($form.get(0));
 
+    postData.append("g_recaptcha_response", $("#g-recaptcha-response").val());
+
     $.ajax({
         cache : false,
         url: $form.attr('action'),
