@@ -3,10 +3,13 @@ install:
 	ndenv install
 	python manage.py migrate
 
-update:
+upgrade:
 	git pull
 	pip install -r requirements.txt
 	npm install
+
+update:
+	git pull
 
 clean:
 	rm -rf nobiki/static/
