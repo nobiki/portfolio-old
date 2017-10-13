@@ -29,7 +29,7 @@ class ContactForm(forms.Form):
 
     def send_email(self):
         subject         = self.cleaned_data['name']
-        message         = self.cleaned_data['message']+"\n\n\n\n\n---------------------------------------------\nPortfolio から送信\n"
+        message         = self.cleaned_data['message']+"\n\n\n\n\n-------------------------------------\n\nPortfolio から送信\n"
         from_address    = self.cleaned_data['email']
         to_address      = [os.environ.get("PORTFOLIO_ENV_DESTINATION_CONTACT")]
 
