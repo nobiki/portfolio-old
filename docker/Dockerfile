@@ -10,7 +10,7 @@ RUN apt-get update && \
 	python3-dev \
 	python3-setuptools \
 	python3-pip \
-	nodejs npm \
+	nodejs \
 	nginx \
 	supervisor \
 	sqlite3 && \
@@ -22,6 +22,10 @@ RUN pip3 install uwsgi
 # nginx
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 COPY nginx-app.conf /etc/nginx/sites-available/default
+
+# node
+RUN curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+RUN sudo apt install -y nodejs
 
 # supervisor
 COPY supervisor-app.conf /etc/supervisor/conf.d/
