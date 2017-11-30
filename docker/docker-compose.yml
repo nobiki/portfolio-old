@@ -1,0 +1,29 @@
+version: "2"
+
+services:
+
+    ##
+    # portfolio
+    ##
+    portfolio:
+        container_name: portfolio
+        hostname: portfolio
+        image: portfolio:latest
+#       networks:
+#           b0:
+#               ipv4_address: 172.18.0.100
+#       ports:
+#           -  "80:80"
+#           -  "443:443"
+        environment:
+            - "TZ=Asia/Tokyo"
+
+
+networks:
+    b0:
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+                -  subnet: 172.18.0.0/16
+                   gateway: 172.18.0.1
