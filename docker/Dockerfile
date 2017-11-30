@@ -20,19 +20,19 @@ RUN pip3 install uwsgi
 
 # nginx
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
-COPY nginx-app.conf /etc/nginx/sites-available/default
+COPY docker/nginx-app.conf /etc/nginx/sites-available/default
 
 # node
 RUN curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 RUN sudo apt install -y nodejs
 
 # supervisor
-COPY supervisor-app.conf /etc/supervisor/conf.d/
+COPY docker/supervisor-app.conf /etc/supervisor/conf.d/
 
 # website
-COPY ../requirements.txt /home/docker/code/app/
+COPY requirements.txt /home/docker/code/app/
 RUN pip3 install -r /home/docker/code/app/requirements.txt
-COPY ../ /home/docker/code/app/
+COPY . /home/docker/code/app/
 
 RUN cd /home/docker/code/app && npm install
 RUN cd /home/docker/code/app && make static
