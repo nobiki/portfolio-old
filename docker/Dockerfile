@@ -10,6 +10,7 @@ RUN apt-get update && \
 	python3-dev \
 	python3-setuptools \
 	python3-pip \
+	nodejs npm \
 	nginx \
 	supervisor \
 	sqlite3 && \
@@ -28,7 +29,9 @@ COPY supervisor-app.conf /etc/supervisor/conf.d/
 # website
 COPY ../requirements.txt /home/docker/code/app/
 RUN pip3 install -r /home/docker/code/app/requirements.txt
-COPY ../ /home/docker/code/
-RUN django-admin.py startproject website /home/docker/code/app/
+COPY ../ /home/docker/code/app/
+
+RUN cd /home/docker/code/app && npm install
+RUN cd /home/docker/code/app && make static
 
 CMD ["supervisord", "-n"]
