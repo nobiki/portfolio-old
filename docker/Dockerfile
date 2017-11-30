@@ -35,6 +35,7 @@ RUN pip3 install -r /home/docker/code/app/requirements.txt
 COPY . /home/docker/code/app/
 
 RUN cd /home/docker/code/app && npm install
-RUN cd /home/docker/code/app && make static
+RUN cd /home/docker/code/app && python3 nobiki/manage.py collectstatic --noinput
+RUN cd /home/docker/code/app && ./node_modules/.bin/webpack -p
 
 CMD ["supervisord", "-n"]
