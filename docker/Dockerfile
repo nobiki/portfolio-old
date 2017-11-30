@@ -4,13 +4,12 @@ MAINTAINER Naoaki Obiki
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y \
-	git \
+	git sudo curl \
 	make autoconf automake gcc g++ \
 	python3 \
 	python3-dev \
 	python3-setuptools \
 	python3-pip \
-	nodejs \
 	nginx \
 	supervisor \
 	sqlite3 && \
