@@ -8,7 +8,7 @@ services:
     portfolio:
         container_name: portfolio
         hostname: portfolio
-        image: portfolio:latest
+        image: nobiki/portfolio:latest
 #       networks:
 #           b0:
 #               ipv4_address: 172.18.0.100
