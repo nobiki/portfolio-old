@@ -9,12 +9,14 @@ services:
         container_name: portfolio
         hostname: portfolio
         image: nobiki/portfolio:latest
-#       networks:
-#           b0:
-#               ipv4_address: 172.18.0.100
+        networks:
+            b0:
+                ipv4_address: 172.18.0.2
         ports:
             -  "11080:80"
             -  "11443:443"
+        volumes:
+            - /var/containers/portfolio/var/virtualdomains/:/var/virtualdomains/
         environment:
             - "TZ=Asia/Tokyo"
 
