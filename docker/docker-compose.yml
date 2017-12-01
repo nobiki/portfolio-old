@@ -17,6 +17,8 @@ services:
 #            -  "11443:443"
         environment:
             - "TZ=Asia/Tokyo"
+        volumes:
+            - /etc/letsencrypt/:/etc/letsencrypt/
         volumes_from:
             - portfolio-contents
 
