@@ -1,9 +1,11 @@
 #!/bin/bash
 
-git clone https://github.com/nobiki/portfolio.git /home/docker/code/app
-pip3 install -r /home/docker/code/app/requirements.txt
-cd /home/docker/code/app && npm install
-cd /home/docker/code/app && python3 nobiki/manage.py collectstatic --noinput
-cd /home/docker/code/app && ./node_modules/.bin/webpack -p
+if [[ ! -e /home/docker/code/app/bootstrap.lock ]]; then
+   git clone https://github.com/nobiki/portfolio.git /home/docker/code/app
+
+   touch /home/docker/code/app/bootstrap.lock
+fi
+
+cd /home/docker/code/app && make upgrade3 && make clean && make static3
 
 /usr/bin/supervisord -n
