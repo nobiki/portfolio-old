@@ -29,14 +29,7 @@ RUN sudo apt install -y nodejs
 # supervisor
 COPY docker/supervisor-app.conf /etc/supervisor/conf.d/
 
-# website
-COPY requirements.txt /home/docker/code/app/
-RUN pip3 install -r /home/docker/code/app/requirements.txt
+COPY docker/entrypoint.sh /
+RUN chmod +x entrypoint.sh
 
-# COPY . /home/docker/code/app/
-
-RUN cd /home/docker/code/app && npm install
-RUN cd /home/docker/code/app && python3 nobiki/manage.py collectstatic --noinput
-RUN cd /home/docker/code/app && ./node_modules/.bin/webpack -p
-
-CMD ["supervisord", "-n"]
+CMD ["./entrypoint.sh"]
