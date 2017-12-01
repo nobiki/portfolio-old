@@ -16,7 +16,7 @@ services:
             -  "11080:80"
             -  "11443:443"
         volumes:
-            - /var/containers/portfolio/var/virtualdomains/:/var/virtualdomains/
+            - /var/containers/portfolio/home/docker/code/app/:/home/docker/code/app/
         environment:
             - "TZ=Asia/Tokyo"
 
