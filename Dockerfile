@@ -16,7 +16,10 @@ RUN apt-get update && \
 	pip3 install -U pip setuptools && \
    rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install uwsgi
+ENV CFLAGS="-I/usr/local/opt/openssl/include"
+ENV LDFLAGS "-L/usr/local/opt/openssl/lib"
+ENV UWSGI_PROFILE_OVERRIDE "ssl=true"
+RUN pip3 install uwsgi -I
 
 # nginx
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
