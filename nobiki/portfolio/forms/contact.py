@@ -40,12 +40,12 @@ class ContactForm(forms.Form):
 
         # send_mail(subject, message, from_address, to_address)
 
-		client = sendgrid.SendGridClient(os.environ.get("PORTFOLIO_ENV_EMAIL_API_KEY"))
-		message = sendgrid.Mail()
+        client = sendgrid.SendGridClient(os.environ.get("PORTFOLIO_ENV_EMAIL_API_KEY"))
+        message = sendgrid.Mail()
 
-		message.add_to(to_address)
-		message.set_from(from_address)
-		message.set_subject(subject)
-		message.set_html(message)
+        message.add_to(to_address)
+        message.set_from(from_address)
+        message.set_subject(subject)
+        message.set_html(message)
 
-		client.send(message)
+        client.send(message)
