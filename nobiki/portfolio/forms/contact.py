@@ -3,10 +3,6 @@ from django import forms
 
 # from django.core.mail import send_mail
 
-# using SendGrid's Python Library
-# https://github.com/sendgrid/sendgrid-python
-import sendgrid
-
 class ContactForm(forms.Form):
     name = forms.CharField(
             required=True,
@@ -39,16 +35,6 @@ class ContactForm(forms.Form):
         to_address      = [os.environ.get("PORTFOLIO_ENV_DESTINATION_CONTACT")]
 
         # send_mail(subject, message, from_address, to_address)
-
-        client = sendgrid.SendGridClient(os.environ.get("PORTFOLIO_ENV_EMAIL_API_KEY"))
-        message = sendgrid.Mail()
-
-        message.add_to(to_address)
-        message.set_from(from_address)
-        message.set_subject(subject)
-        message.set_html(message)
-
-        client.send(message)
 
         headers = {
                 "Authorization": "Bearer "+os.environ.get("PORTFOLIO_ENV_EMAIL_API_KEY")
