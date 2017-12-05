@@ -49,3 +49,14 @@ class ContactForm(forms.Form):
         message.set_html(message)
 
         client.send(message)
+
+        headers = {
+                "Authorization": "Bearer "+os.environ.get("PORTFOLIO_ENV_EMAIL_API_KEY")
+                }
+        payload = {
+                "to": os.environ.get("PORTFOLIO_ENV_DESTINATION_CONTACT"),
+                "from": self.cleaned_data['email'],
+                "subject": self.cleaned_data['name'],
+                "html": self.cleaned_data['message']+"\n\n\n\n\n-------------------------------------\n\nPortfolio から送信\n"
+                }
+        r = requests.post(os.environ.get("PORTFOLIO_ENV_EMAIL_API_URL"), headers=headers, params=payload)
