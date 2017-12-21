@@ -2,6 +2,6 @@ version: 2
 jobs:
   deploy:
     steps:
-      run:
-        commands:
-          - ssh circle@oji.0j0.jp date
+      - run:
+          commands:
+            - ssh circle@oji.0j0.jp date
