@@ -1,5 +1,4 @@
 deployment:
-  deploy:
-    branch: master
+  override:
     commands:
-      - docker-compose -f docker/portfolio-compose.yml up -d
+      - ssh circle@oji.0j0.jp date
