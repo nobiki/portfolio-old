@@ -1,8 +1,11 @@
 version: 2
 jobs:
-  deploy:
-    machine: true
-    steps:
-      - run:
-          commands:
-            - ssh circle@oji.0j0.jp date
+    deploy:
+        machine: true
+        steps:
+            - add_ssh_keys:
+                fingerprints:
+                    - "e3:17:cb:18:12:8e:f1:22:65:31:1f:d1:26:af:c8:1f"
+            - run:
+                commands:
+                    - ssh circle@oji.0j0.jp date
