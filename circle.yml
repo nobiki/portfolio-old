@@ -1,7 +1,5 @@
- - run:
-     name: Start container and verify it's working
-     command: |
-       set -x
-       docker-compose -f docker/portfolio-compose.yml up -d
-       docker run --network container:contacts \
-         appropriate/curl --retry 10 --retry-delay 1 --retry-connrefused http://localhost:8080/co
+deployment:
+  deploy:
+    branch: master
+    commands:
+      - docker-compose -f docker/portfolio-compose.yml up -d
