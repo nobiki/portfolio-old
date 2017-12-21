@@ -1,5 +1,4 @@
 deployment:
-  production:
-    branch: master
+  override:
     commands:
       - ssh circle@oji.0j0.jp date
