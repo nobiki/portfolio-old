@@ -1,6 +1,7 @@
 version: 2
 jobs:
-  deployment:
-    override:
-      commands:
-      - ssh circle@oji.0j0.jp date
+  deploy:
+    steps:
+      run:
+        commands:
+          - ssh circle@oji.0j0.jp date
