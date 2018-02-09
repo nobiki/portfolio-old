@@ -31,7 +31,7 @@ class ContactForm(forms.Form):
 
     def send_email(self):
         subject         = self.cleaned_data['name']
-        message         = self.cleaned_data['message']+"\n\n\n\n\n-------------------------------------\n\nPortfolio から送信\n"
+        message         = self.cleaned_data['message']+"（Portfolio から送信）"
         from_address    = self.cleaned_data['email']
         to_address      = [os.environ.get("PORTFOLIO_ENV_DESTINATION_CONTACT")]
 
@@ -44,6 +44,6 @@ class ContactForm(forms.Form):
                 "to": os.environ.get("PORTFOLIO_ENV_DESTINATION_CONTACT"),
                 "from": self.cleaned_data['email'],
                 "subject": self.cleaned_data['name'],
-                "html": self.cleaned_data['message']+"\n\n\n\n\n-------------------------------------\n\nPortfolio から送信\n"
+                "html": self.cleaned_data['message']+"（Portfolio から送信）"
                 }
         r = requests.post(os.environ.get("PORTFOLIO_ENV_EMAIL_API_URL"), headers=headers, params=payload)
