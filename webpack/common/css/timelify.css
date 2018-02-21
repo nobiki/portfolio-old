@@ -160,4 +160,14 @@ border-bottom: 1em solid #87CEFA }
 	font-size: 13pt;
     word-wrap: break-word;
 }
+
+@media screen and (max-width: 736px){
+  .timeline .timeline-items .timeline-item:nth-of-type(2n){
+    background-color: #87cefa;
+  }
+  .timeline .timeline-items .timeline-item:nth-of-type(2n)::before{
+    border-top: 1em solid #87cefa;
+  }
+}
+
 /*# sourceMappingURL=timelify.css.map */
