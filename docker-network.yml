@@ -1,0 +1,9 @@
+version: '2.3'
+
+networks:
+  portfolio-net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        -  subnet: 172.101.0.0/16
