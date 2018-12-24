@@ -13,7 +13,7 @@ setup: ## application setup
 	docker-compose -f ./docker-network.yml -f ./docker-compose.yml run --rm portfolio-node yarn --cwd /web install
 	docker-compose -f ./docker-network.yml -f ./docker-compose.yml run --rm portfolio-composer composer install
 	docker-compose -f ./docker-network.yml -f ./docker-compose.yml restart
-	sudo chown -R 1000:1000 web/
+	#sudo chown -R 1000:1000 web/
 
 assets: ## npm run dev
 	docker-compose -f ./docker-network.yml -f ./docker-compose.yml run --rm portfolio-node npm --prefix /web run dev

@@ -22,6 +22,7 @@ services:
     container_name: portfolio-php
     hostname: portfolio-php
     image: php:7.2.12-fpm-alpine
+    user: "1000:1000"
     networks:
       portfolio-net:
         ipv4_address: 172.101.0.13
@@ -32,6 +33,7 @@ services:
     container_name: portfolio-composer
     hostname: portfolio-composer
     image: composer:1.7.3
+    user: "1000:1000"
     volumes:
         - ${PWD}/web:/app
     depends_on:
@@ -41,6 +43,7 @@ services:
     container_name: portfolio-node
     hostname: portfolio-node
     image: node:10.13-alpine
+    user: "1000:1000"
     volumes_from:
       - portfolio-contents
 
