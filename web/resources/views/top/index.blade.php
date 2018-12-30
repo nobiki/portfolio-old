@@ -1,7 +1,6 @@
 @extends('layouts.default')
 
 @section('head')
-  head<br>
 @endsection
 
 @section('index')
@@ -10,6 +9,9 @@
   @foreach ($hello_array as $hello_word)
     {{ $hello_word }}<br>
   @endforeach
+  <template>
+    <example ref="foo"></example>
+  </template>
 @endsection
 
 @section('foot')
