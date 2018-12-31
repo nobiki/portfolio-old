@@ -15,8 +15,6 @@
   <template>
     <example ref="foo"></example>
   </template>
-
-
 @endsection
 
 @section('foot')
