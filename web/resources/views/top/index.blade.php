@@ -4,6 +4,9 @@
 @endsection
 
 @section('index')
+  <div class="notification">
+    This container is <strong>centered</strong> on desktop.
+  </div>
   --- index.blade.php ---<br>
   {{ $hello }}<br>
   @foreach ($hello_array as $hello_word)
@@ -12,6 +15,8 @@
   <template>
     <example ref="foo"></example>
   </template>
+
+
 @endsection
 
 @section('foot')

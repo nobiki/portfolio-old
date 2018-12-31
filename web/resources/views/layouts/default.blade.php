@@ -4,7 +4,7 @@
 @include('partials.head')
 </head>
 <body>
-  <div id="app">
+  <div id="app" class="container">
     @yield('index')
     @include('partials.foot')
   </div>
