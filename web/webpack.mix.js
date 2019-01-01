@@ -16,8 +16,10 @@ mix.js('resources/js/app.js', 'public/js')
   .styles([
     'resources/css/font-awesome.min.css',
     'resources/css/photon/main.css',
+    'resources/css/portfolio/main.css',
   ], 'public/css/main.css')
   .styles([
     'resources/css/photon/noscript.css',
   ], 'public/css/photon/noscript.css')
-  .copyDirectory('resources/fonts', 'public/fonts');
+  .copyDirectory('resources/fonts', 'public/fonts')
+  .copyDirectory('resources/images', 'public/images');
