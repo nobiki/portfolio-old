@@ -2,16 +2,10 @@
 @section('head')
   <div class="inner">
     <h1>Naoaki Obiki</h1>
-    <p>Accumsan feugiat mi commodo erat lorem ipsum, sed magna<br />
-    lobortis feugiat sapien sed etiam volutpat accumsan.</p>
-    <ul class="actions special">
-      <li><a href="#one" class="button scrolly">Discover</a></li>
-    </ul>
-  </div>
-  <div class="inner">
   </div>
 @endsection
 @section('index')
+
 <!-- One -->
 <section id="one" class="main style1">
   <div class="container">
@@ -29,6 +23,7 @@
     </div>
   </div>
 </section>
+
 <!-- Two -->
 <section id="two" class="main style2">
   <div class="container">

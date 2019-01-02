@@ -3491,10 +3491,6 @@ body.is-preload #header:after {
 
 }
 
-html, body, #app {
-  height: 100%;
-}
-
 /* Animation */
 @keyframes huerotator {
   0% {
@@ -3508,33 +3504,14 @@ html, body, #app {
   }
 }
 
-/* Intro */
-#header {
-  min-height: 100%;
-  padding-bottom: 3em;
-  animation: huerotator 120s infinite alternate;
-  background: #4568dc;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #b06ab3, #4568dc);
-  /* chrome 10-25, safari 5.1-6 */
-  background: linear-gradient(to right, #b06ab3, #4568dc);
-  /* w3c, ie 10+/ edge, firefox 16+, chrome 26+, opera 12+, safari 7+ */
-  user-select: none;
-  /* css3 */
-  -moz-user-select: none;
-  /* firefox */
-  -webkit-user-select: none;
-  /* safari、chromeなど */
-  -ms-user-select: none;
-  /* ie10かららしい */
-}
-
-#header h1 {
-  font-size: 4.25em;
+html, body, #app {
+  height: 100%;
 }
 
 /* Header */
 #nav {
+  font-family: Source Sans Pro, "sans-serif";
+  font-weight: bold;
   position: fixed;
   z-index: 10000;
   left: 0;
@@ -3585,4 +3562,49 @@ html, body, #app {
   line-height: 3em;
   padding: 0 0.5em 0 0.5em;
   outline: 0;
+}
+
+/* Intro */
+#header {
+  min-height: 100%;
+  padding-bottom: 3em;
+  animation: huerotator 120s infinite alternate;
+  background: #4568dc;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #b06ab3, #4568dc);
+  /* chrome 10-25, safari 5.1-6 */
+  background: linear-gradient(to right, #b06ab3, #4568dc);
+  /* w3c, ie 10+/ edge, firefox 16+, chrome 26+, opera 12+, safari 7+ */
+  user-select: none;
+  /* css3 */
+  -moz-user-select: none;
+  /* firefox */
+  -webkit-user-select: none;
+  /* safari、chromeなど */
+  -ms-user-select: none;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#header h1 {
+  font-family: Source Sans Pro, "sans-serif";
+  font-weight: bold;
+  font-size: 4.25em;
+}
+
+#header .more {
+  border-color: #ffffff;
+  background-image: url("/images/dark-arrow.svg");
+}
+
+#header .more:hover {
+  background-color: rgba(255, 255, 255, 0.125);
+}
+
+#header .more:active {
+  background-color: rgba(255, 255, 255, 0.25);
 }
