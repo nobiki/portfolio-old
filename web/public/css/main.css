@@ -3312,18 +3312,6 @@ body.is-preload #header:after {
     padding: 5em 3em 5em 3em;
   }
 
-  /* One */
-
-  #one {
-    text-align: center;
-  }
-
-  /* Two */
-
-  #two {
-    text-align: center;
-  }
-
 }
 
 /* Small */
@@ -3596,7 +3584,7 @@ html, body, #app {
   font-size: 4.25em;
 }
 
-/*固定する背景*/
+/* Parallax */
 .parallax-page {
   box-sizing: border-box;
   font-size: 5rem;
@@ -3613,7 +3601,7 @@ html, body, #app {
   background-repeat: no-repeat;
   height: 100%;
 }
-/*各背景の画像*/
+
 .img-bg-01 {
   background-image: url("/images/bg1.jpg");
 }
