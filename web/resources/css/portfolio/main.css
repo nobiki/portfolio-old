@@ -103,15 +103,37 @@ html, body, #app {
   font-size: 4.25em;
 }
 
-#header .more {
-  border-color: #ffffff;
-  background-image: url("/images/dark-arrow.svg");
+/* Parallax */
+.parallax-page {
+  box-sizing: border-box;
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 5%;
+}
+.parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
 }
 
-#header .more:hover {
-  background-color: rgba(255, 255, 255, 0.125);
+.img-bg-01 {
+  background-image: url("/images/bg1.jpg");
+}
+.img-bg-02 {
+  background-image: url("/images/bg4.jpg");
+}
+.img-bg-03 {
+  background-image: url("/images/bg6.jpg");
+}
+.img-bg-04 {
+  background-image: url("/images/bg7.jpg");
+}
+.img-bg-05 {
+  background-image: url("/images/bg1.jpg");
 }
 
-#header .more:active {
-  background-color: rgba(255, 255, 255, 0.25);
-}
