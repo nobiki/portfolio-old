@@ -26,7 +26,8 @@ const app = new Vue({
   data: {
     name: "Naoaki Obiki",
     intro: {
-      show: true,
+      loaded: false,
+
     },
   },
   mounted: function() {
@@ -34,5 +35,8 @@ const app = new Vue({
     // this.$refs.ref_name.hello();
   },
   methods: {
-  }
+    onLoaded() {
+      this.intro.loaded = true;
+    }
+  },
 });

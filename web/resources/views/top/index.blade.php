@@ -3,9 +3,7 @@
 @section('head')
   <div class="inner">
     <template>
-      <transition name="fade">
-        <myname ref="ref_name" v-if="intro.show"></myname>
-      </transition>
+      <myname ref="ref_name"></myname>
     </template>
   </div>
 @endsection
