@@ -2,7 +2,11 @@
 
 @section('head')
   <div class="inner">
-    <h1>Naoaki Obiki</h1>
+    <template>
+      <transition name="fade">
+        <myname ref="ref_name" v-if="intro.show"></myname>
+      </transition>
+    </template>
   </div>
 @endsection
 

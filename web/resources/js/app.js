@@ -16,19 +16,22 @@ import Buefy from 'buefy';
 import 'buefy/dist/buefy.css';
 Vue.use(Buefy);
 
-import example from './components/ExampleComponent.vue';
+import myname from './components/MyNameComponent.vue';
 
 const app = new Vue({
   el: '#app',
   components: {
-    example,
+    myname,
   },
   data: {
-    items: []
+    name: "Naoaki Obiki",
+    intro: {
+      show: true,
+    },
   },
   mounted: function() {
     console.log("mounted");
-    this.$refs.foo.hello();
+    // this.$refs.ref_name.hello();
   },
   methods: {
   }

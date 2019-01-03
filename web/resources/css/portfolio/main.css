@@ -97,11 +97,6 @@ html, body, #app {
   align-items: center;
 }
 
-#header h1 {
-  font-family: Source Sans Pro, "sans-serif";
-  font-weight: bold;
-  font-size: 4.25em;
-}
 
 /* Parallax */
 .parallax-page {
@@ -128,12 +123,18 @@ html, body, #app {
   background-image: url("/images/bg4.jpg");
 }
 .img-bg-03 {
-  background-image: url("/images/bg6.jpg");
+  background-image: url("/images/bg1.jpg");
 }
 .img-bg-04 {
-  background-image: url("/images/bg7.jpg");
+  background-image: url("/images/bg4.jpg");
 }
 .img-bg-05 {
   background-image: url("/images/bg1.jpg");
 }
 
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
