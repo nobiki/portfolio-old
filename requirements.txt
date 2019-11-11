@@ -1,4 +1,4 @@
-Django==1.10.5
+Django==1.11.23
 PyMySQL==0.7.10
 redis==2.10.5
 requests==2.18.4
